@@ -46,4 +46,4 @@
 // console.log(addTwo(3,4));
 
 // const name = () => ({username: "hitesh"}) // for object
-// console.log(name()); //
+// console.log(name()); // new comment
