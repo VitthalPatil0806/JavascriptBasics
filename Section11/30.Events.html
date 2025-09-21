@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="glob">
+        <li id="one">
+            <img src="/demo1" alt="img1">
+        </li>
+        <li id="two">
+            <img src="/Section11/JsProjects/Screenshot 2025-09-21 144902.png" alt="img2">
+        </li>
+        <li id="three">
+            <img src="/demo3" alt="img3">
+        </li>
+    </ul>
+</body>
+<script>
+    // document.getElementById('one').addEventListener('click', () => {
+    //     alert('one is clicked')
+    // })
+
+    // must study -
+    // type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget, clientX, clientY, screenX, screenY, altKey, ctrlKey, shiftKey, keyCode
+
+    // document.getElementById('glob').addEventListener('click', () => {
+    //     console.log('global printed');
+    // })
+
+    // document.getElementById('two').addEventListener('click', () => {
+    //     console.log('two printed');
+    // })
+    // note -> output of above code - two printed  global printed
+    // 1. for above example ul have one global glob id and inside it second li have inner two id. so for above code first inner id related code printed then outer will, this is called as bubling event.
+    
+    // document.getElementById('glob').addEventListener('click', () => {
+    //     console.log('global printed');
+    // }, true)
+
+    // document.getElementById('two').addEventListener('click', () => {
+    //     console.log('two printed');
+    // }, true)
+    // 2. output of above code - global printed two printed and it is called as capturing event
+
+
+
+    // document.getElementById('glob').addEventListener('click', () => {
+    //     console.log('global printed');
+    // }, false)
+
+    // document.getElementById('two').addEventListener('click', (e) => {
+    //     console.log('two printed');
+    //     e.stopPropagation()
+    // }, false)
+    // for above code global event will not be call only inner event get call
+    
+    // preventDefault is used to stop or prevent actions happening from any event
+
+    // document.querySelector('#glob').addEventListener('click', (e) => {
+    //     console.log(e.target.parentNode);
+    //     if (e.target.tagName === 'img') {
+    //         let removeIt = e.target.parentNode
+    //         removeIt.remove()
+    //     }
+    // }) // this code is used to remove clicked image from list
+</script>
+</html>
