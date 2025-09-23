@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body id="body">
     <div id="demo"></div>
-    <button onclick="myStopFunction()">stop clock</button>
+    <button id="start" onclick="startTime()">start</button>
+    <button id="stop" onclick="stopTime()">stop clock</button>
 </body>
 <!-- for clearTimeInterval -->
 <!-- <script>
@@ -24,7 +25,53 @@
     console.log(myInterval); // -> 1
 </script> -->
 <!-- for clearTimeOut -->
-<script> 
-    
+
+<!-- <script> 
+    // mini start-stop clock js project
+    const demo = document.getElementById('demo')
+
+    let startTimer;
+    function startTime() {
+        startTimer = setInterval(() => {
+        demo.innerHTML = new Date().toLocaleTimeString()
+    }, 1000)
+    }
+
+    function stopTime() {
+        clearInterval(startTimer)
+    }
+
+</script> -->
+
+<script>
+    const body = document.getElementById('body')
+
+    const randomColor = function () {
+            const hex = '123456789ABCDEF'
+            let color = '#'
+            for (let i = 0; i < 6; i++){
+                color += hex[Math.floor(Math.random() * 16)]
+            }
+            return color;
+    }
+
+    let stopTimer;
+    let startInterval = function () {
+        if (!stopTimer) {
+            stopTimer = setInterval(startChangingColor, 1000)
+        }
+
+        function startChangingColor () {
+            document.body.style.backgroundColor = randomColor()
+        }
+    }
+
+    let stopInterval = function () {
+        clearInterval(stopTimer)
+        stopTimer = null // this line is add coz to optimize performance or to improve code quality
+    }
+    document.getElementById('start').addEventListener('click', startInterval)
+    document.getElementById('stop').addEventListener('click', stopInterval)
+
 </script>
 </html>
