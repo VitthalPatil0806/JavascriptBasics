@@ -1,0 +1,1 @@
+// error like 404, 301 is come in resolve not in reject it come in resolve of promise. code or error come in reject only when request is not complete
